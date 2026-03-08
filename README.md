@@ -15,8 +15,13 @@ An end-to-end lightweight semantic search system built for the Trademarkia AI/ML
 - **Tunable Threshold (0.82):** The semantic cache uses a similarity floor of 0.82. This value was chosen through iterative testing to ensure the system is "smart" enough to catch rephrased questions (e.g., "Space launch" vs "Rocket mission") while maintaining high precision.
 - **Custom Cache:** Avoided Redis/Memcached to demonstrate a deep understanding of state management and similarity mathematics from first principles.
 
-## How to Run
+## Setup & Running
+### Option 1: Local Run
+1. Create a virtual environment: `python -m venv venv`
+2. Activate it: `.\venv\Scripts\Activate.ps1` (Windows)
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run the service: `uvicorn app:app --reload`
+5. Access API Docs: `http://127.0.0.1:8000/docs`
 
-### Option 1: Using Docker (Recommended)
-```bash
+### Option 2: Using Docker 
 docker-compose up --build
