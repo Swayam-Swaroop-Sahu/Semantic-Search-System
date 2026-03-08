@@ -3,7 +3,7 @@
 A lightweight semantic search system built with FastAPI, utilizing fuzzy clustering and a custom semantic cache implementation.
 
 ## Key Components
-- **Dataset:** 20 Newsgroups (Fetched via Sklearn).
+- **Dataset:** Dataset: UCI 20 Newsgroups corpus accessed via sklearn fetch_20newsgroups helper for reproducible loading.
 - **Preprocessing:** Deliberate removal of headers, footers, and quotes to focus on pure semantic content.
 - **Embeddings:** `all-MiniLM-L6-v2` for high-performance, lightweight vectorization.
 - **Fuzzy Clustering:** Implemented using **Gaussian Mixture Models (GMM)** with PCA dimensionality reduction to provide probabilistic (soft) cluster assignments.
@@ -18,5 +18,5 @@ A lightweight semantic search system built with FastAPI, utilizing fuzzy cluster
 
 ## Design Decisions
 - **Threshold (0.82):** Chosen to balance "smart" matching without risking false positives in the cache.
-- **PCA (16 components):** Used to reduce noise and improve the stability of the Gaussian clusters.
+- **PCA (20 components):** Used to reduce noise and improve the stability of the Gaussian clusters.
 - **GMM:** Preferred over K-Means because real-world topics (like "Politics" and "Guns") overlap; GMM captures this "fuzziness" perfectly.
